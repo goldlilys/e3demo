@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the E3Demo Banner feature.
+ */
+
+include_once 'e3demo_banner.features.inc';

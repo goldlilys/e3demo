@@ -114,7 +114,9 @@
   </div>
 </header>
 <div class="banner-container">
-
+  <?php if (!empty($page['banner'])): ?>
+    <?php print render($page['banner']); ?>
+  <?php endif; ?>
 </div>
 <div class="main-container <?php print $container_class; ?>">
 

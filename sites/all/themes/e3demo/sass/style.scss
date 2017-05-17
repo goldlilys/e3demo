@@ -18,6 +18,9 @@ h3 {
 
 a {
   color: $black;
+  &:hover {
+    color: $cyan;
+  }
 }
 
 /* Bootstrap Overrides */
@@ -35,6 +38,14 @@ a {
   }
 }
 
+/* Carousel Banners */
+.carousel-control.left {
+  background: none;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
 .navbar.container {
   margin-top: 0;
 }
@@ -98,6 +109,30 @@ a.logo {
 }
 
 /* Events */
+.view-display-id-events_banner {
+  position: relative;
+  z-index: 10;
+  .views-field-body {
+    position: absolute;
+    z-index: 100;
+    width: 30%;
+    left: 16%;
+    top: 40%;
+    line-height: 1.5em;
+    font-size: 28px;
+    h3 {
+      margin-top: 0;
+      a {
+        font-size: 70px;
+        color: $cyan;
+        font-weight: 800;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
 .view-display-id-featured_event_block {
   .event-date {
     color: $cyan;
@@ -107,7 +142,10 @@ a.logo {
   .event-title h3 {
     text-transform: capitalize;
     margin-top: 5px;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
+    a:hover {
+      text-decoration: none;
+    }
   }
   .views-field-field-event-photo {
     float: left;
@@ -183,6 +221,7 @@ a.logo {
       transform: skewY(1.5deg);
       transform-origin: 100%;
     }
+
   }
   .row {
     margin-bottom: 4em;
@@ -197,7 +236,7 @@ a.logo {
     background: $white;
     right: 3em;
     top: 0;
-    padding: 1em;
+    padding: 10px 1.5em;
     text-align: center;
     .event_month {
       color: $cyan;
@@ -207,22 +246,68 @@ a.logo {
     .event_day {
       font-size: 30px;
     }
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 18%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: 10000;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:after {
+      bottom: -14px;
+      transform: skewY(10deg);
+      transform-origin: 100% 0;
+      background: $white;
+      width: 100.5%;
+    }
   }
   .views-field-field-date-2 {
     color: $cyan;
     text-transform: uppercase;
     font-weight: 600;
-    padding-top: 1em;
+    position: relative;
+    z-index: 1000;
   }
   .views-field-title h3 {
     margin: 5px 0 1em;
+    position: relative;
+    z-index: 1000;
+    a:hover {
+      text-decoration: none;
+    }
   }
   .views-field-field-event-photo {
-    position: relative;
-    z-index: 10;
-    min-height: 280px;
-    img {
-      @include angle-edge(bottomright, 3deg);
+    img, a {
+      position: relative;
+      z-index: 1;
+    }
+
+    .field-content {
+      position: relative;
+      z-index: 100;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        height: 32%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: 100;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+      }
+
+      &:after {
+        bottom: -65px;
+        transform: skewY(10deg);
+        transform-origin: 100% 0;
+        background: $white;
+      }
     }
   }
   .views-field-view-node {
@@ -249,11 +334,23 @@ a.logo {
   .navbar-default .navbar-nav::before {
     padding: 20px 85% 15px 0;
   }
+  .view-display-id-events_banner .views-field-body {
+    left: 10%;
+  }
 }
 
 @media only screen and (max-width: 1400px) {
   .navbar-default .navbar-nav::before {
     padding: 20px 80% 15px 0;
+  }
+  .view-display-id-events_banner .views-field-body {
+    top: 45%;
+    left: 6%;
+    width: 35%;
+    font-size: 20px;
+    h3 a {
+      font-size: 60px;
+    }
   }
 }
 
@@ -263,11 +360,62 @@ a.logo {
     padding: 20px 70% 15px 0;
     margin-left: 0;
   }
+  .view-display-id-featured_event_block {
+    .views-field-field-event-photo, .views-field-nothing {
+      width: 100%;
+    }
+    .views-field-nothing {
+      padding-top: 1em;
+    }
+    .event-title h3 {
+      margin-bottom: 1em;
+    }
+  }
+  .view-display-id-upcoming_events {
+    .col {
+      padding-bottom: 4em;
+    }
+    .views-field-field-event-photo {
+      img {
+        width: 100%;
+      }
+
+      .field-content {
+        position: relative;
+        z-index: 100;
+        &:before,
+        &:after {
+          height: 45%;
+          bottom: -165px;
+        }
+      }
+    }
+  }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
-
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  .navbar-header .collapse, .navbar-toggle {
+    display:block !important;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .view-display-id-events_banner .views-field-body {
+    top: 25%;
+    left: 5%;
+    width: 35%;
+    font-size: 20px;
+    h3 a {
+      font-size: 40px;
+    }
+  }
 }
 
 /* Small Devices, Tablets */
@@ -295,12 +443,41 @@ a.logo {
       color: $white;
     }
   }
+  .view-display-id-events_banner .views-field-body {
+    top: 4%;
+    left: 5%;
+    width: 35%;
+    font-size: 15px;
+    h3 a {
+      font-size: 30px;
+    }
+  }
+  .view-display-id-upcoming_events .view-header h2 {
+    position: static;
+    &:before,
+    &:after {
+      position: static;
+    }
+  }
 
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
+  .view-display-id-events_banner .views-field-body {
+    top: 0;
+    left: 4%;
+    width: 44%;
+    font-size: 10px;
+    h3 {
+      margin: 0 0 5px 0;
+      line-height: 0.5em;
+      a {
+        font-size: 14px;
+      }
+    }
 
+  }
 }
 
 /* Custom, iPhone Retina */

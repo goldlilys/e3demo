@@ -16,8 +16,12 @@ by Frances Naty Go
 
 
 #### To Setup Drupal
-1. Choose E3Demo Theme
-2. Enable E3Demo Events Custom Feature
+1. Inside the /sites directory, add default directory with settings.php. 
+    Usually do not include this inside the Git repo because it changes 
+    depending on the server.
+2. Setup with MySQL and database info.
+3. Choose E3Demo Theme
+4. Enable E3Demo Events Custom Feature
 
 
 #### To Update Theme
