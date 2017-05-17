@@ -34,7 +34,7 @@ function e3demo_events_image_default_styles() {
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 350,
-          'height' => 250,
+          'height' => 200,
         ),
         'weight' => 1,
       ),
