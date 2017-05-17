@@ -1,0 +1,30 @@
+{
+  "name": "e3demo",
+  "version": "1.0.0",
+  "description": "E3 Demo website",
+  "main": "index.php",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-filter": "^5.0.0",
+    "browser-sync": "^2.18.11",
+    "gulp-sourcemaps": "2.6.0",
+    "gulp-shell": "0.6.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:goldlilys/e3demo.git"
+  },
+  "keywords": [
+    "e3demo"
+  ],
+  "author": "Frances Go",
+  "license": "ISC"
+}
