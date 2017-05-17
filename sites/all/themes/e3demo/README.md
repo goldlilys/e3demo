@@ -1,9 +1,9 @@
 <!-- @file Instructions on how to sub-theme the Drupal Bootstrap base theme using the CDN Starterkit. -->
 <!-- @defgroup subtheme_cdn -->
 <!-- @ingroup subtheme -->
-# CDN Starterkit
+# E3 Demo Using Bootstrap Starter Kit with CDN and SASS
 
-The CDN Starterkit is rather simple to set up. You don't have to do anything
+The E3 Demo is rather simple to set up. You don't have to do anything
 until you wish to override the default [Drupal Bootstrap] base theme settings
 or provide additional custom CSS.
 

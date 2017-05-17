@@ -1,6 +1,6 @@
 // Default variables.
 @import 'default-variables';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
 
 body {
   color: $black;
@@ -9,4 +9,301 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+a {
+  color: $black;
+}
+
+/* Bootstrap Overrides */
+.pagination > li > a, .pagination > li > span {
+  background-color: $cyan;
+  &:hover {
+    background-color: $pink;
+  }
+}
+
+.pagination > .active > span {
+  background-color: $pink;
+  &:hover {
+    background-color: $pink;
+  }
+}
+
+.navbar.container {
+  margin-top: 0;
+}
+
+.navbar-header {
+  position: relative;
+}
+
+.navbar-toggle {
+  background: $black;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+a.logo {
+  display: none;
+}
+
+.navbar-default {
+  background: none;
+  .navbar-brand {
+    background: $cyan;
+    margin: 5px auto 0;
+    color: $white;
+    &:hover {
+      background: $cyan;
+      color: $black;
+    }
+  }
+  .navbar-collapse, .navbar-form {
+    border: none;
+  }
+  .navbar-nav {
+    float: right;
+    background: $white;
+    text-transform: uppercase;
+    &:before {
+      background: $cyan;
+      padding: 20px 100% 15px 0;
+      position: absolute;
+      margin-left: -8%;
+    }
+  }
+  .navbar-nav > li {
+    margin-top: 2em;
+  }
+  .navbar-nav > li > a {
+    color: $black;
+    margin-left: 48px;
+  }
+  .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    background: none;
+    color: $pink;
+  }
+}
+
+/* Main Container */
+.main-container {
+  padding-top: 2em;
+}
+
+/* Events */
+.view-display-id-featured_event_block {
+  .event-date {
+    color: $cyan;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .event-title h3 {
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-bottom: 1.5em;
+  }
+  .views-field-field-event-photo {
+    float: left;
+    width: 56%;
+  }
+  .views-field-nothing {
+    width: 42%;
+    float: left;
+  }
+}
+
+.event-link {
+  &:before {
+    position: absolute;
+    z-index: 100;
+    background: $pink;
+    padding: 0.5em 2em;
+    margin: 1em 0;
+    transform: skew(-15deg);
+    text-transform: uppercase;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+    position: relative;
+    justify-content: center;
+    display: inline-block;
+    z-index: 100;
+    background: $pink;
+    padding: 0.5em 2em;
+    margin: 1em 0;
+    transform: skew(-15deg);
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.view-display-id-upcoming_events {
+  .view-header h2 {
+    background: $gray;
+    color: $white;
+    margin: 4em auto 2em;
+    padding: 8px 0;
+    text-align: center;
+    width: 32%;
+    position: relative;
+    z-index: 1;
+
+    &:before,
+    &:after {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:before {
+      top: 0;
+      transform: skewY(1.5deg);
+      transform-origin: 100% 0;
+    }
+
+    &:after {
+      bottom: -10px;
+      transform: skewY(1.5deg);
+      transform-origin: 100%;
+    }
+  }
+  .row {
+    margin-bottom: 4em;
+  }
+  .col {
+    position: relative;
+    z-index: 10;
+  }
+  .views-field-field-date-1 {
+    position: absolute;
+    z-index: 1000;
+    background: $white;
+    right: 3em;
+    top: 0;
+    padding: 1em;
+    text-align: center;
+    .event_month {
+      color: $cyan;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .event_day {
+      font-size: 30px;
+    }
+  }
+  .views-field-field-date-2 {
+    color: $cyan;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-top: 1em;
+  }
+  .views-field-title h3 {
+    margin: 5px 0 1em;
+  }
+  .views-field-field-event-photo {
+    position: relative;
+    z-index: 10;
+    min-height: 280px;
+    img {
+      @include angle-edge(bottomright, 3deg);
+    }
+  }
+  .views-field-view-node {
+    margin-top: 2.5em;
+    span {
+      background: url(../images/learnicon.png) no-repeat right center;
+      padding-right: 1.5em;
+    }
+    a {
+      color: $pink;
+      border-top: $pink 3px solid;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-top: 10px;
+      &:hover {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .navbar-default .navbar-nav::before {
+    padding: 20px 85% 15px 0;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .navbar-default .navbar-nav::before {
+    padding: 20px 80% 15px 0;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .navbar-default .navbar-nav::before {
+    padding: 20px 70% 15px 0;
+    margin-left: 0;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .navbar-header {
+    background: $white;
+    padding-bottom: 10px;
+  }
+  .navbar-default {
+    .navbar-brand {
+      margin: 10px 10px 0;
+    }
+    .navbar-nav {
+      float: none;
+      background: $gray;
+      margin: 0 -15px;
+      &::before {
+        padding: 0;
+      }
+    }
+    .navbar-nav > li {
+      margin-top: 0;
+    }
+    .navbar-nav > li > a {
+      color: $white;
+    }
+  }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
 }
